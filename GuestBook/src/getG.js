@@ -22,7 +22,7 @@ async function getData() {
             <p>${data.title}</p>
             <p>${data.content}</p>
             <p>${data.writer} <p style="color:gray">${data.created_at}</p> </p>
-            <input type="password" id="delPAssword" placeholder="비밀번호 입력">
+            <input type="password"  placeholder="비밀번호 입력">
             <button type="button" id="delBtn">삭제하기</button>
         `;
         //list를 div박스를 만들어 innerHtml을 통해 내부에 데이터 내용 가져오기
@@ -33,7 +33,12 @@ async function getData() {
 
         window.onload = function() {
             const delBtn = document.querySelector("delBtn");
-            delBtn.addEventListener("click", delData);
+            delBtn.addEventListener("click", function(){
+                const delPassword= list.querySelector("input[type='password']").value;
+                const delValue = {password : delPassword};
+                delData(delValue,`${data.guestbook_id}`);
+                
+            });
         };
 
         GList.appendChild(list); //위에서 만든 list를 Glist에 넣기

@@ -31,7 +31,7 @@ function newData() {
         .then((response)=>{
             return response.json()})
         .then((response) => {
-            //console.log(response);
+            console.log(response);
             getData();
         //.catch((error)=>console.log(error));
         })
