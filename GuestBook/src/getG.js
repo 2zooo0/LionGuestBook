@@ -1,4 +1,5 @@
 import {baseURL, container, GuestList, newGuest, GList, newG} from './api.js';
+import { delData } from './delG.js';
 
 
 //방명록 리스트 조회(시간순 정렬)
@@ -21,7 +22,7 @@ async function getData() {
             <p>${data.title}</p>
             <p>${data.content}</p>
             <p>${data.writer} <p style="color:gray">${data.created_at}</p> </p>
-            <input type="password" placeholder="비밀번호 입력">
+            <input type="password" id="delPAssword" placeholder="비밀번호 입력">
             <button type="button" id="delBtn">삭제하기</button>
         `;
         //list를 div박스를 만들어 innerHtml을 통해 내부에 데이터 내용 가져오기
