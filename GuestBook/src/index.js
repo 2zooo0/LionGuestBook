@@ -10,4 +10,5 @@ window.onload= getData();
 
 const submitbtn = document.getElementById('submitbtn');
 
-submitbtn.addEventListener('click', newData());
+//submitbtn.addEventListener('click', newData());
+document.getElementById('submitbtn').addEventListener('click', newData);

@@ -2,13 +2,16 @@ import {baseURL, container, GuestList, newGuest, GList, newG} from './api.js';
 import { getData } from './getG.js';
 
 //새로운 방명록 생성(작성)
+document.getElementById('newG').addEventListener('submitbtn', newData);
 
 function newData() {
     //input안에 입력된 값을 변수에 값 저장
     
-    //return newPost();
+    //newPost();
 
-    //var submitBtn = document.querySelector("#submitBtn");
+    //var submitBtn = document.querySelector("submitBtn");
+    
+
     const titleform = document.getElementById('title');
     const newtitle = titleform.value;
     //console.log(newtitle);
@@ -39,18 +42,23 @@ function newData() {
                 content: newcontent
             })
         })
-        .then((response)=> response.json())
+        .then((response)=> {
+            return response.json()})
         .then((response) => {
             console.log(response);
             getData();
         //.catch((error)=>console.log(error));
         })
+        location.reload();
        
     }
 
     newPost();
 
 
+
 }
+
+//document.getElementById('submitbtn').addEventListener('submit', newData);
 
 export {newData};
