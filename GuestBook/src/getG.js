@@ -34,11 +34,12 @@ async function getData() {
         //delBtn.addEventListener('click', delData(del_id, del_password));
         
         delBtn.addEventListener('click', function(){
-            var del_id = `${data.id}`;
+            var del_id = `${data.id}`.value;
             //var delpassword = list.querySelector("delpassword");
             //var del_password =delpassword.value;
-            var del_password = document.getElementsByName("delpassword").value;
-            delData();
+            var del_password = document.getElementsByName("delpassword")[0].value;
+            console.log(del_password);
+            delData(del_id, del_password);
         } )
     
         GList.appendChild(list); //위에서 만든 list를 Glist에 넣기

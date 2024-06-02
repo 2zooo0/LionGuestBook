@@ -11,7 +11,7 @@ function delData(del_id, del_password) {
             "Content-Type":"application/json",
         },
         body : JSON.stringify({
-            password : del_password,
+            password : `"${del_password}"`
         }),
     })
     .then((response)=> {
