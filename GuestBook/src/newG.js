@@ -6,8 +6,8 @@ import { getData } from './getG.js';
 function newData() {
     //input안에 입력된 값을 변수에 값 저장
     
-    return newPost();
-    
+    //return newPost();
+
     //var submitBtn = document.querySelector("#submitBtn");
     const titleform = document.getElementById('title');
     const newtitle = titleform.value;
@@ -45,9 +45,10 @@ function newData() {
             getData();
         //.catch((error)=>console.log(error));
         })
+       
     }
 
-    //newPost();
+    newPost();
 
 
 }
