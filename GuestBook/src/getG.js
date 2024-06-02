@@ -22,28 +22,24 @@ async function getData() {
             <p>${data.title}</p>
             <p>${data.content}</p>
             <p>${data.writer} <p style="color:gray">${data.created_at}</p> </p>
-            <input type="password"  placeholder="비밀번호 입력">
-            <button type="button" id="delBtn">삭제하기</button>
+            <input type="password"  id="delpassword" placeholder="비밀번호 입력">
+            <button type="button" id="delBtn" >삭제하기</button>
         `;
         //list를 div박스를 만들어 innerHtml을 통해 내부에 데이터 내용 가져오기
         //delBtn클릭시 delData함수 호출
+        var delBtn = list.querySelector("#delBtn");
+        var del_id = `${data.id}`;
+        var del_password =`${data.password}`;
+        delBtn.addEventListener('click', delData(del_id, del_password));
+        
 
-        //const delBtn = document.getElementById("delBtn");
-        //delBtn.addEventListener("click",delData());
-
-        window.onload = function() {
-            const delBtn = document.querySelector("delBtn");
-            delBtn.addEventListener("click", function(){
-                const delPassword= list.querySelector("input[type='password']").value;
-                const delValue = {password : delPassword};
-                delData(delValue,`${data.guestbook_id}`);
-                
-            });
-        };
-
+    
         GList.appendChild(list); //위에서 만든 list를 Glist에 넣기
         GuestList.appendChild(GList);
+
+    
     })
+
    
 }
 

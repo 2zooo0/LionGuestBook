@@ -2,7 +2,6 @@ import {baseURL, container, GuestList, newGuest, GList, newG} from './api.js';
 import { getData } from './getG.js';
 
 //새로운 방명록 생성(작성)
-document.getElementById('newG').addEventListener('submitbtn', newData);
 
 function newData() {
     //input안에 입력된 값을 변수에 값 저장

@@ -1,24 +1,16 @@
 import {baseURL, container, GuestList, newGuest, GList, newG} from './api.js';
-import { getData } from './getG.js';
+import { getData, list } from './getG.js';
 //getG에서 생성된 delBtn클릭시 delData()함수 실행됨.
 
 //방명록삭제
-async function delData(delValue, guestbook_id) {
-    //1.getG에서 사용자가 입력한 비밀번호 값을 변수에 저장하기
-    const response= await fetch(`${baseURL}${guestbook_id}/`,{
-        method: 'POST',
-        headers: {
-            "Content-Type":"application/json",
-        },
-        body: JSON.stringify(delValue)
-    });
-    if (response.ok) {
-        getData();
-    } else{
-        alert("비밀번호를 다시 입력하세요.");
-    }
+function delData(del_id, del_password) {
+    //1.입력받은 비밀번호가 지우고자 선택한 id의 비밀번호와 일치한다면, 서버에 DELETE요청보내기
 
-
+    //1-1. 입력받은 비밀번호값 저장
+    const delpasswordform = document.getElementById("delpassword");
+    const delpassword = delpasswordform.value;
+    console.log(delpassword);
+    
 
 }
 
