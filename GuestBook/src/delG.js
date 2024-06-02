@@ -10,19 +10,19 @@ function delData(del_id, del_password) {
         headers : {
             "Content-Type":"application/json",
         },
-        body : JSON.stringify({
-            password : `"${del_password}"`
+        body: JSON.stringify({
+            password: del_password,
         }),
     })
     .then((response)=> {
         return response.json()})
     .then((response) => {
         console.log(response);
-        //getData();
-    }).catch((error)=>console.log(error));
+        //return getData();
+    }).catch((error)=>console.log(error))
 
 
-    //location.reload();
+    //location.reload();//에러확인못할정도로바로 변해서
 
 }
 
