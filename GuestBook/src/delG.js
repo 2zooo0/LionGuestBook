@@ -4,13 +4,25 @@ import { getData, list } from './getG.js';
 
 //방명록삭제
 function delData(del_id, del_password) {
-    //1.입력받은 비밀번호가 지우고자 선택한 id의 비밀번호와 일치한다면, 서버에 DELETE요청보내기
+    //입력받은 비밀번호가 지우고자 선택한 id의 비밀번호와 일치한다면, 서버에 DELETE요청보내기
+    fetch(`${baseURL}${del_id}/`, {
+        method:"DELETE",
+        headers : {
+            "Content-Type":"application/json",
+        },
+        body : JSON.stringify({
+            password : del_password,
+        }),
+    })
+    .then((response)=> {
+        return response.json()})
+    .then((response) => {
+        console.log(response);
+        //getData();
+    }).catch((error)=>console.log(error));
 
-    //1-1. 입력받은 비밀번호값 저장
-    const delpasswordform = document.getElementById("delpassword");
-    const delpassword = delpasswordform.value;
-    console.log(delpassword);
-    
+
+    //location.reload();
 
 }
 
