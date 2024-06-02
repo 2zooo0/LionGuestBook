@@ -5,9 +5,11 @@ import './newG.js';
 import './getG.js';
 import { newData } from './newG.js';
 import { getData } from './getG.js';
+import { delData } from './delG.js';
 
 window.onload= getData();
 
 const submitbtn = document.getElementById('submitbtn');
 
-submitbtn.addEventListener('click', newData());
+
+document.getElementById('submitbtn').addEventListener('click', newData);

@@ -1,25 +1,28 @@
 import {baseURL, container, GuestList, newGuest, GList, newG} from './api.js';
+import { getData, list } from './getG.js';
+//getG에서 생성된 delBtn클릭시 delData()함수 실행됨.
 
 //방명록삭제
+function delData(del_id, del_password) {
+    //입력받은 비밀번호가 지우고자 선택한 id의 비밀번호와 일치한다면, 서버에 DELETE요청보내기
+    fetch(`${baseURL}${del_id}/`, {
+        method:"DELETE",
+        headers : {
+            "Content-Type":"application/json",
+        },
+        body: JSON.stringify({
+            password: del_password,
+        }),
+    })
+    .then((response)=> {
+        return response.json()})
+    .then((response) => {
+        console.log(response);
+        //return getData();
+    }).catch((error)=>console.log(error))
 
-function delData() {
-    //삭제하고자하는 List의 비번과 입력된 비번값 일치불일치 확인
-    //비밀번호 일치 시 삭제
-    const newpassword = document.getElementById("password").value;
-    if (password != newpassword) {
-        alert("비밀번호를 다시 입력해주세요."); //비밀번호 일치하지않을시 알람창 띄우기
-        return false;
-    } else {
-        return del(); //비번이 일치한다면 del함수 실행
-    }
 
-    function del(){
-        fetch(baseURL, {
-            method: "DELETE",
-        })
-    }
-
-
+    //location.reload();//에러확인못할정도로바로 변해서
 
 }
 
