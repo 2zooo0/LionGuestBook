@@ -18,12 +18,12 @@ function delData(del_id, del_password) {
         return response.json()})
     .then((response) => {
         console.log(response);
+        //location.href = location.href;
         //return getData();
     }).catch((error)=>console.log(error))
 
 
     //location.reload();//에러확인못할정도로바로 변해서
-
 }
 
 export {delData};
