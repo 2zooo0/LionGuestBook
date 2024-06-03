@@ -7,7 +7,7 @@ import { newData } from './newG.js';
 import { getData } from './getG.js';
 import { delData } from './delG.js';
 
-window.onload= getData();
+window.onload = getData();
 window.onload = function(){
     const submitbtn = document.getElementById('submitbtn');
     document.getElementById('submitbtn').addEventListener('click', newData);
@@ -15,6 +15,4 @@ window.onload = function(){
 }
 
 //const submitbtn = document.getElementById('submitbtn');
-
-
-//ocument.getElementById('submitbtn').addEventListener('click', newData);
+//document.getElementById('submitbtn').addEventListener('click', newData);
