@@ -10,7 +10,7 @@
 </head>
 <body>
     <header id="header">
-        <image alt="logo" src = "/public/caulogo.webp"></image> <h1>Lion's GuestBook</h1> 
+        <image alt="logo" src = "caulogo.webp"></image> <h1>Lion's GuestBook</h1> 
     </header>
     <main id="container">
         <div id="GuestList">
@@ -26,7 +26,7 @@
                 <input type="text" id="writer" placeholder="이름을 입력하세요." required/>
                 <input type="text" id="content" placeholder="내용을 입력하세요." required/>
                 <input type="pwd" id="password" maxlength='4' placeholder="비밀번호 설정하기" required/>
-                <button type="submit" id="submitbtn">🚀발자국 남기기🚀</button>
+                <button type="submit" id="submitbtn" onclick="newData()">🚀발자국 남기기🚀</button>
             </div>
 
         </aside>
@@ -36,9 +36,9 @@
 
 
     </div>
-    <!--<script src="/src/index.js"></script>
+    <!--<script src="/src/index.js"></script>-->
     <script>window.onload = function() {getData();};</script>
-    <div id="root"></div>-->
+    <!--<div id="root"></div>-->
     
 </body>
 </html>
